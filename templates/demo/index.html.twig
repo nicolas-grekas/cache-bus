@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello {{ controller_name }}!{% endblock %}
+
+{% block body %}
+
+{% for i in 1..49  %}
+<iframe src="/test" width="30" height="30"></iframe>
+{% if i is divisible by(7) %}
+<br>
+{% endif %}
+{% endfor %}
+
+<ul>
+    <li>red border: cache miss with online computation</li>
+    <li>blue border: cache miss with wait for lock</li>
+    <li>black border: cache hit</li>
+</ul>
+
+<p>
+Same background color: same cached (random) value.
+</p>
+
+<p>
+When the worker runs, we see new backgrounds being propagated without red nor blue borders: the worker computed new cached values in the background.
+</p>
+
+<p>
+When the worker doesn't run, red and blue borders always start a new background color: the cached values are computed online.
+</p>
+{% endblock %}

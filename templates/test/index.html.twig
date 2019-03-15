@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello!{% endblock %}
+
+{% block stylesheets %}
+<meta http-equiv="refresh" content="1;URL=/test"> 
+<style>
+body {
+    padding: 0;
+    margin: 0;
+    background-color: {{ value }}
+}
+
+div {
+    position: relative;
+    display: block;
+    width: 20px;
+    height: 20px;
+    border: 5px solid {{ computation }};
+}
+</style>
+{% endblock %}
+
+{% block body %}
+<div></div>
+
+{% endblock %}

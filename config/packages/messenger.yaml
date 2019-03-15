@@ -1,0 +1,6 @@
+framework:
+    messenger:
+        transports:
+            amqp: '%env(MESSENGER_TRANSPORT_DSN)%'
+        routing:
+            'Symfony\Component\Cache\Messenger\Message': amqp
