@@ -1,6 +1,9 @@
 framework:
     messenger:
+        # Uncomment this (and the failed transport below) to send failed messages to this transport for later handling.
+        # failure_transport: failed
+
         transports:
             amqp: '%env(MESSENGER_TRANSPORT_DSN)%'
         routing:
-            'Symfony\Component\Cache\Messenger\Message': amqp
+            'Symfony\Component\Cache\Messenger\EarlyExpirationMessage': amqp
